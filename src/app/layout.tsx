@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { GeistSans } from 'geist/font/sans';
 import "./globals.css";
+import ConvexClientProvider from "@/app/provider/ConvexClientProvider";
 
 export const metadata: Metadata = {
-  title: "Shadcn Chat",
-  description: "Chat/message components for Shadcn",
+  title: "SBY E-Tourism Chat",
+  description: "Chatbot for Surabaya tourism",
 };
 
 export const viewport = {
@@ -21,7 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={GeistSans.className}>{children}</body>
+      <body className={GeistSans.className}>
+        <ConvexClientProvider>
+          {children}
+        </ConvexClientProvider>
+        </body>
     </html>
   );
 }
